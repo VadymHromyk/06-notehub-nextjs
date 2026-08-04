@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from "formik";
 import * as Yup from "yup";
-import { createNote, type CreateNote } from "@/lib/api/api";
+import { createNote, type CreateNote } from "@/lib/api";
 import css from "./NoteForm.module.css";
 
 interface NoteFormProps {
