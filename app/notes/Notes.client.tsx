@@ -39,25 +39,21 @@ export default function NoteClient() {
       <header className={css.toolbar}>
         <SearchBox onChange={updateSearchQuery} />
         {data && data.totalPages > 1 && (
-          //   <Pagination
-          //     currentPage={currentPage}
-          //     setCurrentPage={setCurrentPage}
-          //     totalPages={data && data.totalPages > 0 ? data.totalPages : 1}
-          //   />
-          <div>pagination!!!</div>
+          <Pagination
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPages={data && data.totalPages > 0 ? data.totalPages : 1}
+          />
         )}
         <button className={css.button} onClick={openModal}>
           Create note +
         </button>
       </header>
-      {/* {isLoading && <Loader />} */}
-      {/* {isError && <ErrorMessage message={error.message} />} */}
-      {/* {data && data.notes.length > 0 ? (
+      {data && data.notes.length > 0 ? (
         <NoteList notes={data.notes} />
       ) : (
         "nothing to show"
-      )} */}
-      {data && data.notes.length > 0 && <NoteList notes={data.notes} />}
+      )}
 
       {isModalOpen && (
         <Modal onClose={closeModal}>
